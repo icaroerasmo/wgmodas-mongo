@@ -26,11 +26,11 @@ class Produto {
 
     static mapping = {
         table 'PRODUTO'
-        distribuidora joinTable: [
-                        name: 'PEDIDO_DISTRIBUIDORA_PRODUTO',
-                        key: 'FK_DISTRIBUIDORA',
-                        column: 'ID'
-                        ]
+        // distribuidora joinTable: [
+        //                 name: 'PEDIDO_DISTRIBUIDORA_PRODUTO',
+        //                 key: 'FK_DISTRIBUIDORA',
+        //                 column: 'ID'
+        //                 ]
         pedidos joinTable: [
                         name: 'PEDIDO_DISTRIBUIDORA_PRODUTO',
                         key: 'FK_PEDIDO',
@@ -49,4 +49,6 @@ class Produto {
         tamanho blank: true, nullable: true
         fabrica nullable: true, unique: true
     }
+
+    String toString() { "$ref" } 
 }

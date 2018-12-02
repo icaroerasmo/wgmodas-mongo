@@ -27,7 +27,13 @@
             </g:hasErrors>
             <g:form resource="${this.distribuidora}" method="POST">
                 <fieldset class="form">
-                    <f:all bean="distribuidora"/>
+                    <f:all bean="distribuidora" except="['usuario', 'pedidos', 'produtos']"/>
+                    <f:with bean="distribuidora">
+                        <f:field property="usuario.email"/>
+                        <f:field property="usuario.senha"/>
+                        <f:field property="pedidos"/>
+                        <f:field property="produtos"/>
+                    </f:with>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

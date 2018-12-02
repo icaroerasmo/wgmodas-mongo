@@ -6,6 +6,9 @@ class Distribuidora {
 	String cnpj
 	String razaoSocial
 	String nomeFantasia
+	String endereco
+	String telefone
+
     Usuario usuario
 
     static hasMany = [
@@ -13,24 +16,28 @@ class Distribuidora {
         pedidos:Pedido
     ]
 
-    static mapping = {
-        table 'DISTRIBUIDORA'
-        produtos joinTable: [
-                        name: 'PEDIDO_DISTRIBUIDORA_PRODUTO',
-                        key: 'ID',
-                        column: 'FK_PRODUTOS'
-                        ] 
-        pedidos joinTable: [
-                        name: 'PEDIDO_DISTRIBUIDORA_PRODUTO',
-                        key: 'ID',
-                        column: 'FK_PEDIDO'
-                        ]
-    }
+    // static mapping = {
+    //     table 'DISTRIBUIDORA'
+    //     produtos joinTable: [
+    //                     name: 'PEDIDO_DISTRIBUIDORA_PRODUTO',
+    //                     key: 'ID',
+    //                     column: 'FK_PRODUTO'
+    //                     ] 
+    //     pedidos joinTable: [
+    //                     name: 'PEDIDO_DISTRIBUIDORA_PRODUTO',
+    //                     key: 'ID',
+    //                     column: 'FK_PEDIDO'
+    //                     ]
+    // }
 
     static constraints = {
         usuario nullable: false, unique: true
         cnpj blank: false, nullable: false
         razaoSocial blank: false, nullable: false
         nomeFantasia blank: false, nullable: false
+        endereco blank: false, nullable: false
+        telefone blank: false, nullable: false
     }
+
+    String toString() { "$nomeFantasia" }
 }

@@ -21,14 +21,14 @@ class Pedido {
 
     static mapping = {
         table 'PEDIDO'
-        distribuidora joinTable: [
-                        name: 'PEDIDO_DISTRIBUIDORA_PRODUTO',
-                        key: 'FK_DISTRIBUIDORA',
-                        column: 'ID'
-                        ]
+        // distribuidora joinTable: [
+        //                 name: 'PEDIDO_DISTRIBUIDORA_PRODUTO',
+        //                 key: 'FK_DISTRIBUIDORA',
+        //                 column: 'ID'
+        //                 ]
         produtos joinTable: [
                         name: 'PEDIDO_DISTRIBUIDORA_PRODUTO',
-                        key: 'FK_PRODUTOS',
+                        key: 'FK_PRODUTO',
                         column: 'ID'
                         ] 
     }

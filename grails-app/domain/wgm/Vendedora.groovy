@@ -5,6 +5,8 @@ class Vendedora {
     Long id
     String nome
 	String cpf
+    String endereco
+	String telefone
 
     Usuario usuario
     Distribuidora distribuidora
@@ -12,5 +14,9 @@ class Vendedora {
     static constraints = {
         nome blank: false, nullable: false
         cpf blank: false, nullable: false, unique: true
+        endereco blank: false, nullable: false
+        telefone blank: false, nullable: false
     }
+
+    String toString() { "$nome" }
 }

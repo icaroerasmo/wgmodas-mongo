@@ -14,4 +14,6 @@ class Cliente {
         endereco blank: false, nullable: false
         telefone blank: false, nullable: false
     }
+
+    String toString() { "$nome" }
 }
