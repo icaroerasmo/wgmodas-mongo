@@ -18,5 +18,9 @@ class Vendedora {
         telefone blank: false, nullable: false
     }
 
+    static mapping = {
+        usuario cascade: 'all-delete-orphan'
+    }
+
     String toString() { "$nome" }
 }

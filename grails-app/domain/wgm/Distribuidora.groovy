@@ -16,19 +16,9 @@ class Distribuidora {
         pedidos:Pedido
     ]
 
-    // static mapping = {
-    //     table 'DISTRIBUIDORA'
-    //     produtos joinTable: [
-    //                     name: 'PEDIDO_DISTRIBUIDORA_PRODUTO',
-    //                     key: 'ID',
-    //                     column: 'FK_PRODUTO'
-    //                     ] 
-    //     pedidos joinTable: [
-    //                     name: 'PEDIDO_DISTRIBUIDORA_PRODUTO',
-    //                     key: 'ID',
-    //                     column: 'FK_PEDIDO'
-    //                     ]
-    // }
+    static mapping = {
+        usuario cascade: 'all-delete-orphan'
+    }
 
     static constraints = {
         usuario nullable: false, unique: true
