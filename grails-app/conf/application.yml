@@ -84,7 +84,6 @@ endpoints:
 
 ---
 hibernate:
-    default_schema: "wgm"
     dialect: net.kaleidos.hibernate.PostgresqlExtensionsDialect
     cache:
         queries: false
@@ -92,6 +91,8 @@ hibernate:
         use_query_cache: false
 environments:
     development:
+        hibernate:
+            default_schema: "wgm"
         dataSource:
             pooled: true
             dbCreate: validate
@@ -99,8 +100,11 @@ environments:
             driverClassName: org.postgresql.Driver
             username: postgres
             password: postgres
+            default_schema: "wgm"
             url: jdbc:postgresql://localhost:5432/postgres
     test:
+        hibernate:
+            default_schema: "public"
         dataSource:
             pooled: true
             dbCreate: validate
@@ -108,8 +112,11 @@ environments:
             driverClassName: org.postgresql.Driver
             username: postgres
             password: postgres
+            default_schema: "wgm"
             url: jdbc:postgresql://localhost:5432/postgres
     production:
+        hibernate:
+            default_schema: "wgm"
         dataSource:
             pooled: true
             dbCreate: validate
@@ -117,6 +124,7 @@ environments:
             driverClassName: org.postgresql.Driver
             username: postgres
             password: postgres
+            default_schema: "public"
             url: jdbc:postgresql://localhost:5432/postgres
             properties:
                 jmxEnabled: true
