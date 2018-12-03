@@ -18,7 +18,7 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:table collection="${distribuidoraList}" except="['pedidos', 'produtos']"/>
+            <f:table collection="${distribuidoraList}" />
 
             <div class="pagination">
                 <g:paginate total="${distribuidoraCount ?: 0}" />

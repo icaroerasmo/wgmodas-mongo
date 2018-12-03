@@ -3,9 +3,8 @@ package wgm
 class Pedido {
 
     Long id
-	Integer codigo
 	Integer quantidade
-	Integer desconto
+	Float desconto
 	Float precoVenda
 
     Vendedora vendedora
@@ -20,16 +19,11 @@ class Pedido {
     ]
 
     static mapping = {
-        table 'PEDIDO'
-        // distribuidora joinTable: [
-        //                 name: 'PEDIDO_DISTRIBUIDORA_PRODUTO',
-        //                 key: 'FK_DISTRIBUIDORA',
-        //                 column: 'ID'
-        //                 ]
+        version false
         produtos joinTable: [
-                        name: 'PEDIDO_DISTRIBUIDORA_PRODUTO',
-                        key: 'FK_PRODUTO',
-                        column: 'ID'
+                        name: 'pedido_produto',
+                        key: 'pedido_id',
+                        column: 'id'
                         ] 
     }
 

@@ -5,11 +5,11 @@ class Produto {
     Long id
 	String ref
 	String descricao
-	Double largura
-	Double altura
-	Double profundidade
+	Float largura
+	Float altura
+	Float profundidade
 	String cor
-	Double preco
+	Float preco
 	String tamanho
 
     Fabrica fabrica
@@ -25,16 +25,11 @@ class Produto {
     ]
 
     static mapping = {
-        table 'PRODUTO'
-        // distribuidora joinTable: [
-        //                 name: 'PEDIDO_DISTRIBUIDORA_PRODUTO',
-        //                 key: 'FK_DISTRIBUIDORA',
-        //                 column: 'ID'
-        //                 ]
+        version false
         pedidos joinTable: [
-                        name: 'PEDIDO_DISTRIBUIDORA_PRODUTO',
-                        key: 'FK_PEDIDO',
-                        column: 'ID'
+                        name: 'pedido_produto',
+                        key: 'produto_id',
+                        column: 'id'
                         ] 
     }
 

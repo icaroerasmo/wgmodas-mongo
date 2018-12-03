@@ -17,6 +17,7 @@ class Distribuidora {
     ]
 
     static mapping = {
+        version false
         usuario cascade: 'all-delete-orphan'
     }
 

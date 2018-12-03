@@ -29,7 +29,13 @@
             <g:form resource="${this.distribuidora}" method="PUT">
                 <g:hiddenField name="version" value="${this.distribuidora?.version}" />
                 <fieldset class="form">
-                    <f:all bean="distribuidora"/>
+                    <f:all bean="distribuidora" except="['usuario', 'pedidos', 'produtos']"/>
+                    <f:with bean="distribuidora">
+                        <f:field property="usuario.email"/>
+                        <f:field property="usuario.senha"/>
+                        <f:field property="pedidos"/>
+                        <f:field property="produtos"/>
+                    </f:with>
                 </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />

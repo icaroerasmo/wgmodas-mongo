@@ -19,6 +19,7 @@ class Vendedora {
     }
 
     static mapping = {
+        version false
         usuario cascade: 'all-delete-orphan'
     }
 

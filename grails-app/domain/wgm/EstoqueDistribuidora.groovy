@@ -1,6 +1,6 @@
 package wgm
 
-class EstoqueDistribuidora {
+class EstoqueDistribuidora implements Serializable {
 
 	Integer quantidade
 
@@ -9,6 +9,10 @@ class EstoqueDistribuidora {
 
     static constraints = {
         distribuidora nullable: false, unique: true
-        produto nullable: false, unique: true
+    }
+
+    static mapping = {
+        version false
+        id composite: ['produto', 'distribuidora']
     }
 }

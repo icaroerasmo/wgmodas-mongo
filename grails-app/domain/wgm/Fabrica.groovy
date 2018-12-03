@@ -13,5 +13,9 @@ class Fabrica {
         telefone blank: false, nullable: false
     }
 
+    static mapping = {
+        version false
+    }
+
     String toString() { "$nome" }
 }

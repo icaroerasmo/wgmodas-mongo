@@ -10,4 +10,8 @@ class Imagem {
     static constraints = {
         img nullable: false
     }
+
+    static mapping = {
+        version false
+    }
 }
