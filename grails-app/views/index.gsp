@@ -6,7 +6,7 @@
 </head>
 <body>
     <content tag="nav">
-        <li class="dropdown">
+        <%-- <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Application Status <span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li><a href="#">Environment: ${grails.util.Environment.current.name}</a></li>
@@ -40,27 +40,36 @@
                     <li><a href="#">${plugin.name} - ${plugin.version}</a></li>
                 </g:each>
             </ul>
+        </li> --%>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+                    <g:if test="${!c.naturalName.contains('Usuario')}">
+                        <li style="padding-left:20px;">
+                            <g:link controller="${c.logicalPropertyName}">${c.naturalName.replace(' Controller', '')}</g:link>
+                        </li>
+                    </g:if>
+                </g:each>
+            </ul>
         </li>
     </content>
 
-    <div class="svg" role="presentation">
+    <%-- <div class="svg" role="presentation">
         <div class="grails-logo-container">
             <asset:image src="grails-cupsonly-logo-white.svg" class="grails-logo"/>
         </div>
-    </div>
+    </div> --%>
 
     <div id="content" role="main">
         <section class="row colset-2-its">
-            <h1>Welcome to Grails</h1>
+            <h1>Weydson e Gleica Modas</h1>
 
             <p>
-                Congratulations, you have successfully started your first Grails application! At the moment
-                this is the default page, feel free to modify it to either redirect to a controller or display
-                whatever content you may choose. Below is a list of controllers that are currently deployed in
-                this application, click on each to execute its default action:
+                Gerenciamento de vendas e distribuição de roupas e acessórios.
             </p>
 
-            <div id="controllers" role="navigation">
+            <%-- <div id="controllers" role="navigation">
                 <h2>Available Controllers:</h2>
                 <ul>
                     <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
@@ -69,7 +78,7 @@
                         </li>
                     </g:each>
                 </ul>
-            </div>
+            </div> --%>
         </section>
     </div>
 
