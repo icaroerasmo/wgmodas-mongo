@@ -46,7 +46,7 @@
             <ul class="dropdown-menu">
                 <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
                     <g:if test="${!c.naturalName.contains('Usuario')}">
-                        <li style="padding-left:30px;">
+                        <li style="padding-right:30px;">
                             <g:link controller="${c.logicalPropertyName}">${c.naturalName.replace(' Controller', '')}</g:link>
                         </li>
                     </g:if>
