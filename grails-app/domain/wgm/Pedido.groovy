@@ -10,10 +10,6 @@ class Pedido {
     Vendedora vendedora
 	Cliente cliente
 
-    static hasOne = [
-        distribuidora:Distribuidora
-    ]
-
     static hasMany = [
         produtos:Produto
     ]

@@ -12,8 +12,7 @@ class Distribuidora {
     Usuario usuario
 
     static hasMany = [
-        produtos:Produto,
-        pedidos:Pedido
+        produtos:Produto
     ]
 
     static mapping = {

@@ -33,7 +33,6 @@
                     <f:with bean="distribuidora">
                         <f:field property="usuario.email"/>
                         <f:field property="usuario.senha"/>
-                        <f:field property="pedidos"/>
                         <f:field property="produtos"/>
                     </f:with>
                 </fieldset>
