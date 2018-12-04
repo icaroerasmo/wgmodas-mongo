@@ -86,17 +86,11 @@ img {
 .footer {
     background: #424649;
     color: #ffffff;
-    /* clear: both; */
+    clear: both;
     font-size: 0.8em;
     margin-top: 1.5em;
     padding: 1em;
     min-height: 1em;
-
-    /** I've put this **/
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    /*******************/ 
 }
 
 .footer a {

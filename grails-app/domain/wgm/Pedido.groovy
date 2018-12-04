@@ -28,7 +28,6 @@ class Pedido {
     }
 
     static constraints = {
-        codigo blank: false, nullable: false, unique: true
         quantidade blank: false, nullable: false
         desconto blank: false, nullable: false
         precoVenda blank: false, nullable: false

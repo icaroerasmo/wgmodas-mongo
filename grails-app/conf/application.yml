@@ -81,7 +81,6 @@ grails:
 endpoints:
     jmx:
         unique-names: true
-
 ---
 hibernate:
     dialect: net.kaleidos.hibernate.PostgresqlExtensionsDialect
