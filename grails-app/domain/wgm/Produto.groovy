@@ -42,7 +42,7 @@ class Produto {
         cor blank: false, nullable: false
         preco blank: false, nullable: false
         tamanho blank: true, nullable: true
-        fabrica nullable: true, unique: true
+        fabrica nullable: false, unique: false
     }
 
     String toString() { "$ref" } 
