@@ -11,4 +11,3 @@ and then, this one for grails:
 ```
 sdk install grails
 ```
-teste
