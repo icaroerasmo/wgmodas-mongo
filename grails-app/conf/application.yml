@@ -82,64 +82,16 @@ endpoints:
     jmx:
         unique-names: true
 ---
-hibernate:
-    dialect: net.kaleidos.hibernate.PostgresqlExtensionsDialect
-    cache:
-        queries: false
-        use_second_level_cache: false
-        use_query_cache: false
+mongodb:
+        host: localhost
+        port: 27017
+        #username: ""
+        #password: ""
+        #databaseName: "mydatabase"
 environments:
     development:
-        hibernate:
-            default_schema: "wgm"
-        dataSource:
-            pooled: true
-            dbCreate: validate
-            jmxExport: true
-            driverClassName: org.postgresql.Driver
-            username: postgres
-            password: postgres
-            default_schema: "wgm"
-            url: jdbc:postgresql://localhost:5432/postgres
+       
     test:
-        hibernate:
-            default_schema: "public"
-        dataSource:
-            pooled: true
-            dbCreate: validate
-            jmxExport: true
-            driverClassName: org.postgresql.Driver
-            username: postgres
-            password: postgres
-            default_schema: "wgm"
-            url: jdbc:postgresql://localhost:5432/postgres
+       
     production:
-        hibernate:
-            default_schema: "wgm"
-        dataSource:
-            pooled: true
-            dbCreate: validate
-            jmxExport: true
-            driverClassName: org.postgresql.Driver
-            username: postgres
-            password: postgres
-            default_schema: "public"
-            url: jdbc:postgresql://localhost:5432/postgres
-            properties:
-                jmxEnabled: true
-                initialSize: 5
-                maxActive: 50
-                minIdle: 5
-                maxIdle: 25
-                maxWait: 10000
-                maxAge: 600000
-                timeBetweenEvictionRunsMillis: 5000
-                minEvictableIdleTimeMillis: 60000
-                validationQuery: SELECT 1
-                validationQueryTimeout: 3
-                validationInterval: 15000
-                testOnBorrow: true
-                testWhileIdle: true
-                testOnReturn: false
-                jdbcInterceptors: ConnectionState
-                defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+       
